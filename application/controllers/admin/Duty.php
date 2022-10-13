@@ -31,10 +31,6 @@ class Duty extends MY_Controller {
 
 	public function VerifiersDutyAssign(){
 			if(isset($_POST['submit'])){
-                
-                // echo "<pre>";
-                // print_r($_POST);
-                // die;
 				for($i=0;$i<count($_POST['placename']);$i++){
 					$place_id = $_POST['placename'][$i];
 					$verifier_id = $_POST['verifiers_ids'][$i];
