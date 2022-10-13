@@ -103,9 +103,6 @@ class Reports extends MY_Controller {
         }
         unset($data['bookingInfo']);
         $data['bookingInfo'] = $datas;
-        // echo "<pre>";
-        // print_r($data);
-        // die;
         echo json_encode($data);
     }
     public function getTransactionsData() {

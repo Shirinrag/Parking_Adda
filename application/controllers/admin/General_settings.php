@@ -19,7 +19,29 @@ class General_settings extends MY_Controller {
     //-------------------------------------------------------------------------
     public function add() {
         $this->rbac->check_operation_access(); // check opration permission
-        $data = array('application_name' => $this->input->post('application_name'), 'timezone' => $this->input->post('timezone'), 'currency' => $this->input->post('currency'), 'default_language' => $this->input->post('language'), 'copyright' => $this->input->post('copyright'), 'email_from' => $this->input->post('email_from'), 'smtp_host' => $this->input->post('smtp_host'), 'smtp_port' => $this->input->post('smtp_port'), 'smtp_user' => $this->input->post('smtp_user'), 'smtp_pass' => $this->input->post('smtp_pass'), 'facebook_link' => $this->input->post('facebook_link'), 'twitter_link' => $this->input->post('twitter_link'), 'google_link' => $this->input->post('google_link'), 'youtube_link' => $this->input->post('youtube_link'), 'linkedin_link' => $this->input->post('linkedin_link'), 'instagram_link' => $this->input->post('instagram_link'), 'recaptcha_secret_key' => $this->input->post('recaptcha_secret_key'), 'recaptcha_site_key' => $this->input->post('recaptcha_site_key'), 'recaptcha_lang' => $this->input->post('recaptcha_lang'), 'created_date' => date('Y-m-d : h:m:s'), 'updated_date' => date('Y-m-d : h:m:s'),);
+        $data = array(
+            'application_name' => $this->input->post('application_name'), 
+            'timezone' => $this->input->post('timezone'), 
+            'currency' => $this->input->post('currency'), 
+            'default_language' => $this->input->post('language'), 
+            'copyright' => $this->input->post('copyright'), 
+            'email_from' => $this->input->post('email_from'), 
+            'smtp_host' => $this->input->post('smtp_host'), 
+            'smtp_port' => $this->input->post('smtp_port'), 
+            'smtp_user' => $this->input->post('smtp_user'), 
+            'smtp_pass' => $this->input->post('smtp_pass'), 
+            'facebook_link' => $this->input->post('facebook_link'), 
+            'twitter_link' => $this->input->post('twitter_link'), 
+            'google_link' => $this->input->post('google_link'), 
+            'youtube_link' => $this->input->post('youtube_link'), 
+            'linkedin_link' => $this->input->post('linkedin_link'), 
+            'instagram_link' => $this->input->post('instagram_link'), 
+            'recaptcha_secret_key' => $this->input->post('recaptcha_secret_key'), 
+            'recaptcha_site_key' => $this->input->post('recaptcha_site_key'), 
+            'recaptcha_lang' => $this->input->post('recaptcha_lang'), 
+            'created_date' => date('Y-m-d : h:m:s'), 
+            'updated_date' => date('Y-m-d : h:m:s'),
+        );
         $old_logo = $this->input->post('old_logo');
         $old_favicon = $this->input->post('old_favicon');
         $path = "assets/img/";

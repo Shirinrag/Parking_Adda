@@ -1,101 +1,97 @@
 <div class="datalist">
     <div class="table-responsive">
-    <table id="example1" class="table table-bordered table-hover">
+        <table id="example1" class="table table-bordered table-hover">
 
-        <thead>
+            <thead>
 
-            <tr>
+                <tr>
 
-                <th width="50"><?= trans('id') ?></th>
+                    <th width="50"><?= trans('id') ?></th>
 
-                <th><?= trans('user') ?></th>
+                    <th><?= trans('user') ?></th>
 
-                <th><?= trans('username') ?></th>
+                    <th><?= trans('username') ?></th>
 
-                <th><?= trans('email') ?></th>
+                    <th><?= trans('email') ?></th>
 
-                <th><?= trans('role') ?></th>
+                    <th><?= trans('role') ?></th>
 
-                <th width="100"><?= trans('status') ?></th>
+                    <th width="100"><?= trans('status') ?></th>
 
-                <th width="120"><?= trans('action') ?></th>
+                    <th width="120"><?= trans('action') ?></th>
 
-            </tr>
+                </tr>
 
-        </thead>
+            </thead>
 
-        <tbody>
+            <tbody>
 
-            <?php foreach($info as $row): ?>
+                <?php foreach($info as $row): ?>
 
-            <tr>
+                <tr>
 
-            	<td>
+                    <td>
 
-					<?=$row['admin_id']?>
+                        <?=$row['admin_id']?>
 
-                </td>
+                    </td>
 
-                <td>
+                    <td>
 
-					<h4 class="m0 mb5"><?=$row['firstname']?> <?=$row['lastname']?></h4>
+                        <h4 class="m0 mb5"><?=$row['firstname']?> <?=$row['lastname']?></h4>
 
-                    <small class="text-muted"><?=$row['admin_role_title']?></small>
+                        <small class="text-muted"><?=$row['admin_role_title']?></small>
 
-                </td>
+                    </td>
 
-                <td>
+                    <td>
 
-                    <?=$row['username']?>
+                        <?=$row['username']?>
 
-                </td> 
+                    </td>
 
-                <td>
+                    <td>
 
-					<?=$row['email']?>
+                        <?=$row['email']?>
 
-                </td>
+                    </td>
 
-                <td>
+                    <td>
 
-                    <button class="btn btn-xs btn-success"><?=$row['admin_role_title']?></button>
+                        <button class="btn btn-xs btn-success"><?=$row['admin_role_title']?></button>
 
-                </td> 
+                    </td>
 
-                <td><input class='tgl tgl-ios tgl_checkbox' 
+                    <td><input class='tgl tgl-ios tgl_checkbox' data-id="<?=$row['admin_id']?>"
+                            id='cb_<?=$row['admin_id']?>' type='checkbox'
+                            <?php echo ($row['is_active'] == 1)? "checked" : ""; ?> />
 
-                    data-id="<?=$row['admin_id']?>" 
+                        <label class='tgl-btn' for='cb_<?=$row['admin_id']?>'></label>
 
-                    id='cb_<?=$row['admin_id']?>' 
+                    </td>
 
-                    type='checkbox' <?php echo ($row['is_active'] == 1)? "checked" : ""; ?> />
+                    <td>
 
-                    <label class='tgl-btn' for='cb_<?=$row['admin_id']?>'></label>
+                        <a href="<?= base_url("admin/admin/edit/".$row['admin_id']); ?>"
+                            class="btn btn-warning btn-xs mr5">
 
-                </td>
+                            <i class="fa fa-edit"></i>
 
-                <td>
+                        </a>
 
-                    <a href="<?= base_url("admin/admin/edit/".$row['admin_id']); ?>" class="btn btn-warning btn-xs mr5" >
+                        <a href="<?= base_url("admin/admin/delete/".$row['admin_id']); ?>"
+                            onclick="return confirm('are you sure to delete?')" class="btn btn-danger btn-xs"><i
+                                class="fa fa-remove"></i></a>
 
-                    <i class="fa fa-edit"></i>
+                    </td>
 
-                    </a>
+                </tr>
 
-                    <a href="<?= base_url("admin/admin/delete/".$row['admin_id']); ?>" onclick="return confirm('are you sure to delete?')" class="btn btn-danger btn-xs"><i class="fa fa-remove"></i></a>
+                <?php endforeach;?>
 
-                </td>
+            </tbody>
 
-            </tr>
+        </table>
+    </div>
 
-            <?php endforeach;?>
-
-        </tbody>
-
-    </table>
 </div>
-
-</div>
-
-
-

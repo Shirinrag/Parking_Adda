@@ -1,72 +1,67 @@
-<div class="form-background"> 
+<div class="form-background">
 
-  <div class="login-box">
+    <div class="login-box">
 
-    <div class="login-logo">
+        <div class="login-logo">
 
-      <h2><a href="<?= base_url('admin'); ?>"><?= $this->general_settings['application_name']; ?></a></h2>
+            <h2><a href="<?= base_url('admin'); ?>"><?= $this->general_settings['application_name']; ?></a></h2>
 
-    </div>
+        </div>
 
-    <!-- /.login-logo -->
+        <!-- /.login-logo -->
 
-    <div class="card">
+        <div class="card">
 
-      <div class="card-body login-card-body">
+            <div class="card-body login-card-body">
 
-        <p class="login-box-msg"><?= trans('forgot_password') ?></p>
+                <p class="login-box-msg"><?= trans('forgot_password') ?></p>
 
 
 
-        <?php $this->load->view('admin/includes/_messages.php') ?>
+                <?php $this->load->view('admin/includes/_messages.php') ?>
 
-        
 
-         <?php echo form_open(base_url('admin/auth/forgot_password'), 'class="login-form" '); ?>
 
-          <div class="form-group has-feedback">
+                <?php echo form_open(base_url('admin/auth/forgot_password'), 'class="login-form" '); ?>
 
-            <input type="text" name="email" id="email" class="form-control" placeholder="<?= trans('email') ?>" >
+                <div class="form-group has-feedback">
 
-          </div>
+                    <input type="text" name="email" id="email" class="form-control" placeholder="<?= trans('email') ?>">
 
-          <div class="row">
+                </div>
 
-            <!-- /.col -->
+                <div class="row">
 
-            <div class="col-12">
+                    <!-- /.col -->
 
-              <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block btn-flat" value="<?= trans('submit') ?>">
+                    <div class="col-12">
+
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block btn-flat"
+                            value="<?= trans('submit') ?>">
+
+                    </div>
+
+                    <!-- /.col -->
+
+                </div>
+
+                <?php echo form_close(); ?>
+
+
+
+                <p class="mt-3"><a href="<?= base_url('admin/auth/login'); ?>"><?= trans('you_remember_password') ?>
+                    </a></p>
+
+
 
             </div>
 
-            <!-- /.col -->
+            <!-- /.login-card-body -->
 
-          </div>
-
-        <?php echo form_close(); ?>
-
-
-
-        <p class="mt-3"><a href="<?= base_url('admin/auth/login'); ?>"><?= trans('you_remember_password') ?> </a></p>
-
-
-
-      </div>
-
-      <!-- /.login-card-body -->
+        </div>
 
     </div>
 
-  </div>
-
-  <!-- /.login-box -->
+    <!-- /.login-box -->
 
 </div>
-
-          
-
-
-
-
-
