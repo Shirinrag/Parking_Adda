@@ -165,13 +165,14 @@ class Ground extends MY_Controller {
     }
     public function datatable_json() {
         $records['data'] = $this->slot_model->getDeviceData();
-        // 		echo "<pre>";
-        // 		print_r($records['data']);
-        // 		die;
+        		// echo "<pre>";
+        		// print_r($records['data']);
+        		// die;
         $data = array();
         $i = 0;
         foreach ($records['data'] as $row) {
-            $last_inserted = $this->sensor_model->getSensorLogsById($row['device_id']) ['created_date'];
+            $last_inserted = $this->sensor_model->getSensorLogsById(@$row['device_id']);
+            // $last_inserted = $this->sensor_model->getSensorLogsById(@$row['device_id']) ['created_date'];
             $last_inserted = date('d F Y H:i', strtotime($last_inserted));
             $original_date = $row['onCreated'];
             if ($row['test_status'] == 1 && $row['slot_name'] != "") {
